@@ -8,7 +8,7 @@ env:
   - DYN_VAR=Dynamic
 
 before_install:
-- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ] && DYN_VAR="Overriden" || false'
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ] && DYN_VAR="Overriden" || true'
 
 script:
 - node build.js

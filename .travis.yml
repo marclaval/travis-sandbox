@@ -5,6 +5,10 @@ node_js:
 env:
   global:
   - MY_VAR=DefinedInGlobal
+  - DYN_VAR=Dynamic
+
+before_install:
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && DYN_VAR="Overriden" || false'
 
 script:
 - node build.js
